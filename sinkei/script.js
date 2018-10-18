@@ -6,7 +6,7 @@ window.onload = function(){
     var str = ''; // 図柄はランダムで決定
     var cStr = []; // カードの絵柄となる文字列を配列で格納
     var judgeCnt = 0; // 正解数
-    var img = []; // 図柄が何回出てきたかのカウント
+    var img = []; // 図柄が何回出てきたかのカウント img[0, 0]
     var tCard = []; // めくられたカード図柄一時格納
     var aCnt = 0; // 正解までの手数
     var sCnt = 0; // 正解数
@@ -38,7 +38,7 @@ window.onload = function(){
         CARD = (MAX + 1) * (MAX + 1) / 2;
 
         // ランダムな文字列生成
-        cStr = [];
+        cStr = [];// 配列[] = 何もない状態 push →　配列[0], push →　配列[0,0]
         str = '★◆◇■☆！？＠§ΘΣΩΨβ※∞√∬♯♪㍽㍼';
         for(var i = 0; i < CARD; i++){
             var rnd = Math.floor(Math.random() * str.length);
