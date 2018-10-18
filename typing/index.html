@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <section id="description">
+            白い枠内に登場する文字列を灰色の中のtypeの横に打ち込みます。ひとつでも文字を入力すればスタートです。半角文字しか出ませんので半角に切り替えてからスタートして下さい。入力された文字はピンクの枠内に表示されます。Enterで確定となり正解か不正解の結果と共に一番下の灰色の枠内に入力した文字と共に出力されます。20問正解でクリアです。
+        </section>
+        <div id="app">
+            <section id="state">
+                <div id="arrow" v-if="seen"><i class="fas fa-arrow-circle-down"></i></div>
+                <div id="reset">RESET</div>
+                <p><span>正　解：</span><span id="correctnum">{{ correct }}</span></p>
+                <p><span>不正解：</span><span id="missnum">{{ miss }}</span></p>
+                <p id="time">{{ time }}</p>
+                <div id="gauge"></div>
+            </section>
+            <p id="task">{{ task }}</p>
+            <p id="results" v-html="message"></p>
+            <p id="input">type: <input id="input_r" placeholder="Here to enter the character" v-model="message"></p>
+            <div id="prev"></div>
+        </div>
+        <footer>
+            &copy;2018 ukkari-ukachan
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
